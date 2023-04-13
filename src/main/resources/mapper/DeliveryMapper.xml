@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ems.mapper.DeliveryMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ems.entity.Delivery">
+        <id column="id" property="id"/>
+        <result column="wrap_no" property="wrapNo"/>
+        <result column="delivery_user_id" property="deliveryUserId"/>
+        <result column="delivery_user_name" property="deliveryUserName"/>
+        <result column="receiving_user_name" property="receivingUserName"/>
+        <result column="receiving_user_id" property="receivingUserId"/>
+        <result column="wrap_no" property="wrapNo"/>
+        <result column="wrap_id" property="wrapId"/>
+        <result column="delivery_time" property="deliveryTime"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id
+        , wrap_no, pickup_code, apply_user_id, apply_user_name, apply_state, apply_time
+    </sql>
+
+    <select id="pageCC" resultType="com.ems.entity.Delivery">
+        select * from delivery ${ew.customSqlSegment}
+    </select>
+
+<!--    <update id="updateByPakageId" parameterType="com.ems.entity.Delivery">-->
+<!--        update delivery set apply_state = #{applyState} where pakage_id = #{pakageId}-->
+<!--    </update>-->
+
+</mapper>

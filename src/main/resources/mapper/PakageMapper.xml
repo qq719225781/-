@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ems.mapper.PakageMapper">
+
+
+    <select id="pageCC" resultType="com.ems.entity.Pakage">
+        select * from pakage ${ew.customSqlSegment}
+    </select>
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ems.entity.Pakage">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="warehouse" property="warehouse" />
+        <result column="pakageType" property="pakagetype" />
+        <result column="count" property="count" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, warehouse, pakageType, count, remark
+    </sql>
+
+</mapper>
